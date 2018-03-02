@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rapport de migration des sites Jahia à WordPress</title>
+</head>
+<body>
+<table border="1" style="border-collapse: collapse">
+    <thead style="background-color: gray">
+    <tr>
+        <td>Site info</td>
+        <td>Screenshot</td>
+    </tr>
+    </thead>
+    <tbody>
+    {% for site in sites %}
+    <tr>
+        <td>url jahia: <a href="{{ site['jahia_url'] }}" target="_blank">{{ site['jahia_url'] }}</a><br>
+            url WordPress: <a href="{{ site['url'] }}">{{ site['url'] }}</a><br>
+            Username: {{ site['username'] }}<br>
+            Password: {{ site['password'] }}
+        </td>
+        <td><img src="img/{{ site['screenshot'] }}"/></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
